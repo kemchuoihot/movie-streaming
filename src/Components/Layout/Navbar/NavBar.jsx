@@ -33,22 +33,22 @@ const NavBar = () => {
           <div className="col-span-3 font-medium text-sm gap-36 xl:gap-14 2xl:gap-20 justify-between lg:flex xl:justify-end items-center hidden">
             <ul className="flex lg:gap-10 gap-4">
               <li>
-                <Link to="/" className="text-gray-700 text-base font-medium hover:text-blue-800 transition-all ">
+                <Link to="/" className="text-white text-base font-medium hover:text-blue-800 transition-all ">
                 <i class='bx bx-home-alt-2 mr-1'></i>Home
                 </Link>
               </li>
               <li>
-                <Link to="/movies" className="text-gray-700 text-base font-medium hover:text-blue-800 transition-all ">
+                <Link to="/movies" className="text-white text-base font-medium hover:text-blue-800 transition-all ">
                 <i class='bx bx-movie mr-1' ></i>Movies
                 </Link>
               </li>
               <li>
-                <Link to="/tv-shows" className="text-gray-700 text-base font-medium hover:text-blue-800 transition-all ">
+                <Link to="/tv-shows" className="text-white text-base font-medium hover:text-blue-800 transition-all ">
                 <i class='bx bx-tv mr-1' ></i>TV Shows
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-870  text-base font-medium hover:text-blue-800 transition-all ">
+                <Link to="/about" className="text-white  text-base font-medium hover:text-blue-800 transition-all ">
                 <i class='bx bx-user mr-1'></i>About
                 </Link>
               </li>
