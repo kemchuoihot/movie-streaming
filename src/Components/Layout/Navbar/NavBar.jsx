@@ -23,7 +23,7 @@ const NavBar = () => {
 
   return (
     <>
-      <div className={`sticky top-0 z-20 transition-all duration-700 ${scrolled ? 'bg-blue-900 bg-opacity-95' : 'bg-transparent'}`}>
+      <div className={`sticky top-0 z-20 transition-all duration-700 ${scrolled ? 'bg-[#203d5a] bg-opacity-90' : 'bg-transparent'}`}>
         <div className="container mx-auto py-6 px-2 lg:grid gap-10 grid-cols-8 justify-between items-center">
           <div className="col-span-2 lg:block hidden">
             <Link to="/">

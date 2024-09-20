@@ -28,9 +28,10 @@ const Watch = () => {
     <div>
       <h1>Watch {film.title}</h1>
       <iframe
-        src="https://player.phimapi.com/player/?url=https://s4.phim1280.tv/20240918/ioL9nMDC/index.m3u8"
+        title={`Watch ${film.title}`}
+        src={film.episodes[0].server_data[0].link_embed}
         width="100%"
-        height="700px"
+        height="650px"
         allowFullScreen
         frameBorder="0"
       ></iframe>

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import "boxicons/css/boxicons.min.css";
 import { fetchMovieDetails } from "../../api/api"; // Import fetchMovieDetails
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const Detail = () => {
   const { slug } = useParams();
@@ -93,7 +95,8 @@ const Detail = () => {
       <section className="bg-gray-900 px-4 ">
         <div className="container mx-auto flex flex-col lg:flex-row ">
           <div className="w-full lg:w-1/3 mb-8 lg:mb-0 relative -top-80">
-            <img
+            <LazyLoadImage
+              effect="blur"
               src={film.movie.poster_url}
               alt="poster"
               className="w-full h-auto rounded-lg"

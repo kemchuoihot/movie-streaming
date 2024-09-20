@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import ReactPlayer from "react-player";
 import { fetchDataFromAPI, fetchMovieDetails } from "../../../api/api.js";
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const Main = () => {
   const [loading, setLoading] = useState(true);
@@ -70,6 +72,10 @@ const Main = () => {
   const toggleContent = () => {
     setShowFullContent(!showFullContent);
   };
+
+  if(loading) {
+    return <div>Loading...</div>
+  }
   return (
     <>
       <div className="relative">
@@ -80,7 +86,7 @@ const Main = () => {
               alt="slide"
               className="w-full h-full relative -top-28"
             />
-            <div className="absolute -top-28 left-0 w-full h-full bg-gray-950 bg-opacity-60 flex items-center justify-between px-40 space-y-4">
+            <div className="absolute -top-28 left-0 w-full h-full bg-gradient-to-r from-gray-950 bg-gray-950 bg-opacity-60 flex items-center justify-between px-40 space-y-4">
               <div className="relative w-1/2">
                 <h2 className="text-white text-4xl font-black font-[Merriweather]">
                   {movie.movie.name}
@@ -111,7 +117,8 @@ const Main = () => {
                 </Link>
               </div>
               <div className="relative w-1/2 mx-auto flex justify-center">
-                <img
+                <LazyLoadImage
+                effect="blur"
                   src={movie.movie.poster_url}
                   alt="poster_movie"
                   className="w-3/5 rounded-lg"
@@ -123,53 +130,57 @@ const Main = () => {
       </div>
 
       {data.length > 0 && (
-        <div className="relative container mx-auto">
-          {data.length > 0 && (
-            <h1 className="text-3xl font-bold font-mono ml-5 relative -top-10">
-              Phim mới cập nhật:
-            </h1>
-          )}
-          <button
-            onClick={scrollLeft}
-            className=" text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-300 font-medium absolute -left-10 top-1/2 transform -translate-y-1/2 bg-gray-300 p-2 rounded-full"
-          >
-            &lt;
-          </button>
-          <div
-            ref={scrollContainerRef}
-            className="overflow-x-auto whitespace-nowrap py-4 no-scrollbar"
-          >
-            {data.length > 0 ? (
-              data.map((item) => (
-                <Link to={`/detail/${item.slug}`}>
-                  <div
-                    key={item.id}
-                    className="inline-block p-3 transform transition-transform duration-300 hover:scale-105"
-                  >
-                    <div className="rounded-lg shadow-lg">
-                      <img
-                        src={item.poster_url}
-                        alt="poster"
-                        className="w-48 h-80 object-cover rounded-lg hover:shadow-lg transition duration-300 hover:shadow-gray-400"
-                      />
-                      {/* <div className="p-4">
-                    <h3 className="text-xl font-bold">{item.name}</h3>
-                    <p className="text-gray-500">{item.description}</p>
-                    </div> */}
-                    </div>
-                  </div>
-                </Link>
-              ))
-            ) : (
-              <div>Loading</div>
+        <div className="bg-[#222d38] h-dvh p-10 -top-28 relative">
+          <div className="relative bg-[#151d25] rounded-lg px-5 container mx-auto">
+            {data.length > 0 && (
+              <h1 className="text-2xl font-bold font-[Montserrat] ml-5 mt-5 relative bg-gradient-to-br from-[#ff8a00]  to-[#ff2070] inline-block text-transparent bg-clip-text">
+                Phim mới cập nhật:
+              </h1>
             )}
+            <button
+              onClick={scrollLeft}
+              className=" text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-300 font-medium absolute -left-10 top-1/2 transform -translate-y-1/2 bg-gray-300 p-2 rounded-full"
+            >
+              &lt;
+            </button>
+            <div
+              ref={scrollContainerRef}
+              className="overflow-x-auto whitespace-nowrap py-4 no-scrollbar snap-mandatory snap-x"
+            >
+              {data.length > 0 ? (
+                data.map((item) => (
+                  <Link to={`/detail/${item.slug}`}>
+                    <div
+                      key={item.id}
+                      className="inline-block p-3 transform transition-transform duration-300 hover:scale-105 snap-start"
+                    >
+                      <div className="rounded-lg shadow-lg">
+                        <LazyLoadImage
+                          effect="blur"
+                          src={item.poster_url}
+                          alt="poster"
+                          className="w-[184px] h-80 object-cover rounded-lg hover:shadow-lg transition duration-300 hover:shadow-sky-950"
+                        />
+                        {/* <div className="p-4">
+                      <h3 className="text-xl font-bold">{item.name}</h3>
+                      <p className="text-gray-500">{item.description}</p>
+                      </div> */}
+                      </div>
+                    </div>
+                  </Link>
+                ))
+              ) : (
+                <div>Loading</div>
+              )}
+            </div>
+            <button
+              onClick={scrollRight}
+              className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-300 absolute -right-10 top-1/2 transform -translate-y-1/2 bg-gray-300 p-2 rounded-full"
+            >
+              &gt;
+            </button>
+            
           </div>
-          <button
-            onClick={scrollRight}
-            className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-300 absolute -right-10 top-1/2 transform -translate-y-1/2 bg-gray-300 p-2 rounded-full"
-          >
-            &gt;
-          </button>
         </div>
       )}
     </>
