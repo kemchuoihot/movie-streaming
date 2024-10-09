@@ -6,7 +6,8 @@ import "react-loading-skeleton/dist/skeleton.css";
 
 const Slide = ({ movie, showFullContent, toggleContent, data }) => {
 
-  return (
+  return ( 
+    
     <div className="relative">
       <img
         src={movie.movie.thumb_url}
