@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
-import ReactPlayer from "react-player";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 import { fetchDataFromAPI, fetchMovieDetails } from "../../../api/api.js";
 import { Link } from "react-router-dom";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+import Slide from "./Slide.jsx";
 
 const Main = () => {
   const [loading, setLoading] = useState(true);
@@ -26,7 +28,7 @@ const Main = () => {
           // Lấy chỉ số ngẫu nhiên từ 0 đến 9
           // const randomIndex = Math.floor(Math.random() * 10);
           // setSlug(response.items[randomIndex].slug);
-          setSlug(response.items[0].slug);
+          setSlug(response.items[3].slug);
         } else {
           setError("No items found in response");
         }
@@ -73,69 +75,58 @@ const Main = () => {
     setShowFullContent(!showFullContent);
   };
 
-  if(loading) {
-    return <div>Loading...</div>
+  if (loading) {
+    return (
+      <SkeletonTheme baseColor="#151d25" highlightColor="#525252">
+        <div className="relative h-[800px]">
+          <Skeleton height={800} className="w-full h-full relative -top-28" />
+          <div className="absolute -top-28 left-0 w-full h-full bg-gradient-to-r from-gray-950 bg-gray-950 bg-opacity-60 flex items-center justify-between px-40 space-y-4">
+            <div className="relative w-1/2">
+              <Skeleton width={300} height={40} className="mb-4" />
+              <Skeleton width={200} height={30} className="mb-4" />
+              <Skeleton count={3} className="mb-4" />
+              <Skeleton width={100} height={20} className="mb-5" />
+              <Skeleton width={150} height={50} className="rounded-lg" />
+            </div>
+            <div className="relative w-1/2 mx-auto flex justify-center">
+              <Skeleton
+                width={400}
+                height={500}
+                className="rounded-lg mx-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </SkeletonTheme>
+    );
   }
   return (
     <>
-      <div className="relative">
-        {data.length > 0 && (
-          <>
-            <img
-              src={movie.movie.thumb_url}
-              alt="slide"
-              className="w-full h-full relative -top-28"
-            />
-            <div className="absolute -top-28 left-0 w-full h-full bg-gradient-to-r from-gray-950 bg-gray-950 bg-opacity-60 flex items-center justify-between px-40 space-y-4">
-              <div className="relative w-1/2">
-                <h2 className="text-white text-4xl font-black font-[Merriweather]">
-                  {movie.movie.name}
-                </h2>
-                <p className="text-white text-2xl font-semibold my-4 font-[Merriweather]">
-                  Năm: {movie.movie.year}
-                </p>
-                <p className="text-white text-balance my-4">
-                  {showFullContent
-                    ? movie.movie.content
-                    : `${movie.movie.content?.substring(0, 200)}...`}
-                  <button
-                    onClick={toggleContent}
-                    className="text-blue-500 opacity-80 ml-2 transition-all"
-                  >
-                    {showFullContent ? "Thu gọn" : "Xem thêm"}
-                  </button>
-                </p>
-                <p className="text-white mb-5">{movie.movie.time}</p>
-                <Link to={`/detail/${movie.movie.slug}`}>
-                  <button class="relative inline-flex items-center justify-center p-5 px-8 py-3.5 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out rounded-lg shadow-xl group hover:ring-0 hover:ring-purple-500 -left-[2px]">
-                    <span class="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-600 via-purple-600 to-pink-700"></span>
-                    <span class="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-pink-500 rounded-full opacity-30 group-hover:rotate-90 ease"></span>
-                    <span class="relative text-white text-base font-semibold">
-                      Xem Ngay
-                    </span>
-                  </button>
-                </Link>
-              </div>
-              <div className="relative w-1/2 mx-auto flex justify-center">
-                <LazyLoadImage
-                effect="blur"
-                  src={movie.movie.poster_url}
-                  alt="poster_movie"
-                  className="w-3/5 rounded-lg"
-                />
-              </div>
-            </div>
-          </>
-        )}
-      </div>
+      {(
+        <div>
+          <Slide
+            movie={movie}
+            showFullContent={showFullContent}
+            toggleContent={toggleContent}
+            data={data}
+          />
+        </div>
+      ) || (
+        <SkeletonTheme baseColor="#151d25" highlightColor="#525252">
+          <Skeleton height={800} className="w-full h-full relative -top-28" />
+        </SkeletonTheme>
+      )}
 
       {data.length > 0 && (
-        <div className="bg-[#222d38] h-dvh p-10 -top-28 relative">
+        <div className="bg-[#222d38] h-auto p-10 -top-28 relative">
           <div className="relative bg-[#151d25] rounded-lg px-5 container mx-auto">
             {data.length > 0 && (
-              <h1 className="text-2xl font-bold font-[Montserrat] ml-5 mt-5 relative bg-gradient-to-br from-[#ff8a00]  to-[#ff2070] inline-block text-transparent bg-clip-text">
-                Phim mới cập nhật:
-              </h1>
+              <>
+                <h1 className="text-2xl font-bold font-[Montserrat] ml-5 mt-5 relative bg-gradient-to-br from-[#ff8a00]  to-[#ff2070] inline-block text-transparent bg-clip-text">
+                  PHIM MỚI CẬP NHẬT:
+                </h1>
+                <div className="w-1/4 h-[1px] text-transparent bg-gradient-to-br from-[#ff8a00]  to-[#ff2070] ml-5"></div>
+              </>
             )}
             <button
               onClick={scrollLeft}
@@ -179,7 +170,6 @@ const Main = () => {
             >
               &gt;
             </button>
-            
           </div>
         </div>
       )}
