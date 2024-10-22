@@ -42,33 +42,43 @@ const Hoathinh = () => {
     return <div>Loading...</div>;
   }
   return (
-    <div className="bg-[#222d38] h-dvh p-10 -top-28 relative">
-      <div className="relative bg-[#151d25] rounded-lg px-5 container mx-auto">
-        <h1 className="text-2xl font-bold font-[Montserrat] ml-5 mt-5 relative bg-gradient-to-br from-[#ff8a00]  to-[#ff2070] inline-block w-full text-transparent bg-clip-text">
-          PHIM HOẠT HÌNH:
-        </h1>
-        <div className="w-1/4 h-[1px] text-transparent bg-gradient-to-br from-[#ff8a00]  to-[#ff2070] ml-5"></div>
-        <div className=" mx-auto">
+    <div className="bg-[#06121e] h-auto p-10 -top-28 relative">
+      <div className="relative bg-[#0e274073] rounded-lg px-5 container mx-auto">
+        <div className="flex justify-between pt-5 pb-4">
+          <div className="inline-block">
+            <h1 className="text-2xl font-bold font-[Montserrat] ml-5 relative bg-gradient-to-br from-[#ff8a00]  to-[#ff2070] inline-block text-transparent bg-clip-text">
+              PHIM HOẠT HÌNH:
+            </h1>
+            <div className="w-full h-[1px] text-transparent bg-gradient-to-br from-[#ff8a00]  to-[#ff2070] ml-5"></div>
+          </div>
+          <button className="text-white  md:tracking-widest rounded-xl w-40  hover:from-black hover:to-black transition duration-300 mb-1 text-right">
+            Xem thêm
+          </button>
+        </div>
+        <div className="grid grid-cols-5">
           {data.length > 0 ? (
             data.map((item) => (
               <Link to={`/detail/${item.slug}`}>
                 <div
                   key={item.id}
-                  className="inline-block p-3 transform transition-transform duration-300 hover:scale-105 snap-start  mx-2 hoathinh"
+                  className="inline-block p-3 transform transition-transform duration-300 hover:scale-105 snap-start mx-2 hoathinh min-h-80"
                 >
                   <div className="rounded-lg shadow-lg">
                     <LazyLoadImage
                       effect="blur"
                       src={`https://phimimg.com/${item.poster_url}`}
                       alt="poster"
-                      className="w-[200px] h-72 object-cover rounded-lg hover:shadow-lg transition duration-300 hover:shadow-sky-950"
+                      className="w-[220px] h-72 object-cover rounded hover:shadow-lg transition duration-300 hover:shadow-md"
                     />
                     {/* <div className="p-4">
                       <h3 className="text-xl font-bold">{item.name}</h3>
                       <p className="text-gray-500">{item.description}</p>
                       </div> */}
                   </div>
-                  <h3 className="max-w-[184px] inline-block text-ellipsis overflow-hidden whitespace-nowrap text-green-400">{item.name}</h3>
+                  <h3 className="max-w-[184px] inline-block text-ellipsis overflow-hidden whitespace-nowrap text-[#dbdbdb]">
+                    {item.name}
+                  </h3>
+                  <h4 className="max-w-[184px] text-ellipsis overflow-hidden whitespace-nowrap text-[#7a7a7a] text-xs">{item.origin_name}</h4>
                 </div>
               </Link>
             ))

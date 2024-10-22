@@ -9,17 +9,19 @@ const Slide = ({ movie, showFullContent, toggleContent, data }) => {
   return ( 
     
     <div className="relative">
-      <img
-        src={movie.movie.thumb_url}
-        alt="slide"
-        className="w-full h-full relative -top-28"
-      />
-      <div className="absolute -top-28 left-0 w-full h-full bg-gradient-to-r from-gray-950 bg-gray-950 bg-opacity-60 flex items-center justify-between px-40 space-y-4">
-        <div className="relative w-1/2">
-          <h2 className="text-white text-4xl font-black font-[Merriweather]">
+
+      <div
+        style={{ backgroundImage: `url(${movie.movie.thumb_url})` }}
+        className="w-full h-screen relative -top-28"
+      >
+        
+      </div>
+      <div className="absolute -top-28 left-0 w-full h-full bg-gradient-to-r from-gray-950 bg-gray-950 bg-opacity-60 flex items-center justify-between  lg:px-40 space-y-4">
+        <div className="relative w-1/2 ">
+          <h2 className="text-white text-4xl font-black font-[Montserrat]">
             {movie.movie.name}
           </h2>
-          <p className="text-white text-2xl font-semibold my-4 font-[Merriweather]">
+          <p className="text-white text-2xl font-semibold my-4 font-[Montserrat]">
             Năm: {movie.movie.year}
           </p>
           <p className="text-white text-balance my-4">

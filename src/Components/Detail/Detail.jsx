@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import "boxicons/css/boxicons.min.css";
 import { fetchMovieDetails } from "../../api/api"; // Import fetchMovieDetails
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const Detail = () => {
   const { slug } = useParams();
@@ -57,14 +57,17 @@ const Detail = () => {
       >
         <div className="container mx-auto py-4 px-4 flex justify-between items-center">
           <div className="flex items-center">
-            <img src="img/logo.png" alt="logo" className="w-12 h-12 mr-4" />
-            <ul className="flex space-x-4">
+            <ul className="flex space-x-4 pt-5">
               <li>
                 <Link
                   to="/"
                   className="text-white text-lg font-bold hover:text-gray-400"
                 >
-                  Home
+                  <img
+                    src="https://seeklogo.com/images/M/movie-city-hd-logo-D25A7AC34A-seeklogo.com.png"
+                    alt="logo"
+                    className="w-20  mr-4"
+                  />
                 </Link>
               </li>
             </ul>
@@ -141,7 +144,7 @@ const Detail = () => {
           </div>
           <div className="w-full lg:pl-12">
             <div className="relative -top-72">
-              <h1 className="text-4xl text-white font-bold font-[Merriweather] ">
+              <h1 className="text-4xl text-white font-bold font-[Montserrat] ">
                 {film.movie.origin_name}
               </h1>
               <h1 className="text-xl text-gray-300 font-light mt-4 ">

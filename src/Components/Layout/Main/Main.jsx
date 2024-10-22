@@ -118,15 +118,20 @@ const Main = () => {
       )}
 
       {data.length > 0 && (
-        <div className="bg-[#222d38] h-auto p-10 -top-28 relative">
-          <div className="relative bg-[#151d25] rounded-lg px-5 container mx-auto">
+        <div className="bg-[#06121e] h-auto p-10 -top-28 relative">
+          <div className="relative bg-[#0e274073] rounded-lg px-5 container mx-auto">
             {data.length > 0 && (
-              <>
-                <h1 className="text-2xl font-bold font-[Montserrat] ml-5 mt-5 relative bg-gradient-to-br from-[#ff8a00]  to-[#ff2070] inline-block text-transparent bg-clip-text">
-                  PHIM MỚI CẬP NHẬT:
-                </h1>
-                <div className="w-1/4 h-[1px] text-transparent bg-gradient-to-br from-[#ff8a00]  to-[#ff2070] ml-5"></div>
-              </>
+              <div className="flex justify-between pt-5">
+                <div className="inline-block">
+                  <h1 className="text-2xl font-bold font-[Montserrat] ml-5 relative bg-gradient-to-br from-[#ff8a00]  to-[#ff2070] inline-block text-transparent bg-clip-text">
+                    PHIM MỚI CẬP NHẬT:
+                  </h1>
+                  <div className="w-full h-[1px] text-transparent bg-gradient-to-br from-[#ff8a00]  to-[#ff2070] ml-5"></div>
+                </div>
+                <button className="text-white  md:tracking-widest rounded-xl w-40  hover:from-black hover:to-black transition duration-300 mb-1 text-right">
+                  Xem thêm
+                </button>
+              </div>
             )}
             <button
               onClick={scrollLeft}
