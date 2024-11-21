@@ -4,6 +4,7 @@ import "boxicons/css/boxicons.min.css";
 import { fetchMovieDetails } from "../../api/api"; // Import fetchMovieDetails
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import Footer from "../Footer/Footer";
 
 const Detail = () => {
   const { slug } = useParams();
@@ -43,7 +44,7 @@ const Detail = () => {
   }, []);
 
   if (!film) {
-    return <div>Loading...</div>;
+    return <div className="h-screen bg-gray-900 text-white">Loading...</div>;
   }
 
   return (
@@ -51,7 +52,7 @@ const Detail = () => {
       <header
         className={`fixed top-0 left-0 w-full z-20 transition-all duration-500 ${
           scrolled
-            ? "bg-blue-900 bg-opacity-90 border-indigo-600"
+            ? "bg-gray-900 bg-opacity-90"
             : "bg-transparent"
         }`}
       >
@@ -72,20 +73,37 @@ const Detail = () => {
               </li>
             </ul>
           </div>
-          <div className="text-white text-lg font-bold">
-            {sessionStorage.getItem("username") ? (
-              <a href="logout.php">
-                {sessionStorage.getItem("username")} - Log out here
-              </a>
-            ) : (
-              <a
-                href={`login.php?redirect=${encodeURIComponent(
-                  window.location.pathname
-                )}`}
-              >
-                Log in
-              </a>
-            )}
+          <div className="col-span-3 font-medium text-sm gap-36 xl:gap-14 2xl:gap-20 justify-between lg:flex xl:justify-end items-center hidden">
+            <ul className="flex lg:gap-10 gap-4">
+            <li>
+                <Link to="/" className="text-white text-base font-medium hover:text-blue-400 relative transition-all group">
+                  <i className='bx bx-home-alt-2 mr-1'></i>Trang chủ
+                  <span className="absolute -bottom-1 left-1/2 w-0 transition-all h-0.5 bg-indigo-600 group-hover:w-3/6"></span>
+                  <span className="absolute -bottom-1 right-1/2 w-0 transition-all h-0.5 bg-indigo-600 group-hover:w-3/6"></span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/category/phim-le/1" className="text-white text-base font-medium hover:text-blue-400 transition-all group relative">
+                  <i className='bx bx-movie mr-1'></i>Phim lẻ
+                  <span className="absolute -bottom-1 left-1/2 w-0 transition-all h-0.5 bg-indigo-600 group-hover:w-3/6"></span>
+                  <span className="absolute -bottom-1 right-1/2 w-0 transition-all h-0.5 bg-indigo-600 group-hover:w-3/6"></span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/category/phim-bo/1" className="text-white text-base font-medium hover:text-blue-400 transition-all group relative">
+                  <i className='bx bx-tv mr-1'></i>Phim bộ
+                  <span className="absolute -bottom-1 left-1/2 w-0 transition-all h-0.5 bg-indigo-600 group-hover:w-3/6"></span>
+                  <span className="absolute -bottom-1 right-1/2 w-0 transition-all h-0.5 bg-indigo-600 group-hover:w-3/6"></span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="text-white text-base font-medium hover:text-blue-400 transition-all group relative">
+                  <i className='bx bx-user mr-1'></i>About
+                  <span className="absolute -bottom-1 left-1/2 w-0 transition-all h-0.5 bg-indigo-600 group-hover:w-3/6"></span>
+                  <span className="absolute -bottom-1 right-1/2 w-0 transition-all h-0.5 bg-indigo-600 group-hover:w-3/6"></span>
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
       </header>
@@ -93,9 +111,9 @@ const Detail = () => {
         style={{ backgroundImage: `url(${film.movie.thumb_url})` }}
         className="h-[530px] bg-cover bg-center relative"
       >
-        <div className="absolute inset-0 bg-black bg-opacity-75"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
       </div>
-      <section className="bg-gray-900 px-4 ">
+      <section className="bg-[#06121e] px-4 ">
         <div className="container mx-auto flex flex-col lg:flex-row ">
           <div className="w-full lg:w-1/3 mb-8 lg:mb-0 relative -top-80">
             <LazyLoadImage
@@ -179,6 +197,7 @@ const Detail = () => {
               <div className="mt-8">
                 <span className="text-xl text-white">Trailer:</span>
                 <iframe
+                  title="Movie Trailer"
                   className="w-4/5 h-[420px] mt-4"
                   src={`https://youtube.com/embed/${trailerId}`}
                   allowFullScreen
@@ -188,6 +207,7 @@ const Detail = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 };

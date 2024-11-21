@@ -26,9 +26,9 @@ export const fetchMovieDetails = async (slug) => {
   }
 };
 
-export const fetchMovieByCategory = async (category) => {
+export const fetchMovieByCategory = async (category, page = 1, limit = 10) => {
   try {
-    const response = await axios.get(`https://phimapi.com/v1/api/danh-sach/${category}`);
+    const response = await axios.get(`https://phimapi.com/v1/api/danh-sach/${category}?page=${page}&limit=${limit}`);
     if (response && response.data) {
       return response.data;
     } else {

@@ -4,7 +4,7 @@ import Main from './Main/Main';
 import Hoathinh from './Hoathinh/Hoathinh';
 import Phimle from './Phimle/Phimle';
 import Phimbo from './Phimbo/Phimbo';
-import Footer from './Footer/Footer';
+import Footer from '../Footer/Footer';
 function Layout() {
   return (
     <>
@@ -13,7 +13,7 @@ function Layout() {
       <Hoathinh/>
       <Phimle/>
       <Phimbo/>
-      {/* <Footer/> */}
+      <Footer/>
     </>
   )
 }
