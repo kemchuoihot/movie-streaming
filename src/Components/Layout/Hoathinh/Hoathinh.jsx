@@ -65,7 +65,7 @@ const Hoathinh = () => {
             data.map((item) => (
               <Link to={`/detail/${item.slug}`} key={item.id} className="mx-auto">
                 <div className="inline-block md:p-3 transform transition-transform duration-300 hover:scale-105 snap-start md:mx-2 hoathinh md:min-h-80 ">
-                  <div className="rounded-lg shadow-lg">
+                  <div className="md:rounded-lg shadow-lg">
                     <LazyLoadImage
                       effect="blur"
                       src={`https://phimimg.com/${item.poster_url}`}

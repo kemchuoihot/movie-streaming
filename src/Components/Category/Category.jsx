@@ -156,43 +156,44 @@ const Category = () => {
           </div>
         </div>
       </header>
-      <div className="bg-[#06121e] h-auto p-10 relative">
-        <div className="relative bg-[#0e274073] rounded-lg px-5 container mx-auto">
-          <div className="flex justify-between pt-5 pb-4">
-            <div className="inline-block">
-              <h1 className="text-2xl font-bold font-[Montserrat] ml-5 relative bg-gradient-to-br from-[#ff8a00]  to-[#ff2070] inline-block text-transparent bg-clip-text">
-                {title}
-              </h1>
-              <div className="w-full h-[1px] text-transparent bg-gradient-to-br from-[#ff8a00]  to-[#ff2070] ml-5"></div>
-            </div>
+      <div className="bg-[#06121e] h-auto py-20 relative ">
+      <div className="relative bg-[#0e274073] sm:rounded-lg sm:px-5 sm:container mx-auto w-full">
+        <div className="flex justify-between pt-5 pb-4">
+          <div className="inline-block">
+            <h1 className="text-lg md:text-2xl font-bold font-[Montserrat] md:ml-5 relative bg-gradient-to-br from-[#ff8a00] to-[#ff2070] inline-block text-transparent bg-clip-text">
+              {title}
+            </h1>
+            <div className="w-full h-[1px] text-transparent bg-gradient-to-br from-[#ff8a00] to-[#ff2070] md:ml-5"></div>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-            {data.length > 0 ? (
-              data.map((item) => (
-                <Link to={`/detail/${item.slug}`} key={item.id}>
-                  <div className="inline-block p-3 transform transition-transform duration-300 hover:scale-105 snap-start mx-2 hoathinh min-h-80">
-                    <div className="rounded-lg shadow-lg">
-                      <LazyLoadImage
-                        effect="blur"
-                        src={`https://phimimg.com/${item.poster_url}`}
-                        alt="poster"
-                        className="w-full h-72 object-cover rounded transition duration-300 hover:shadow-md"
-                      />
-                    </div>
-                    <h3 className="max-w-[184px] inline-block text-ellipsis overflow-hidden whitespace-nowrap text-[#dbdbdb]">
-                      {item.name}
-                    </h3>
-                    <h4 className="max-w-[184px] text-ellipsis overflow-hidden whitespace-nowrap text-[#7a7a7a] text-xs">
-                      {item.origin_name}
-                    </h4>
+          
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 md:gap-4 ">
+          {data.length > 0 ? (
+            data.map((item) => (
+              <Link to={`/detail/${item.slug}`} key={item.id} className="mx-auto">
+                <div className="inline-block md:p-3 transform transition-transform duration-300 hover:scale-105 snap-start md:mx-2 hoathinh md:min-h-80 ">
+                  <div className="md:rounded-lg shadow-lg">
+                    <LazyLoadImage
+                      effect="blur"
+                      src={`https://phimimg.com/${item.poster_url}`}
+                      alt="poster"
+                      className="w-full h-80 sm:h-64 md:min-w-[184px] md:h-72 object-cover md:rounded hover:shadow-lg transition duration-300 "
+                    />
                   </div>
-                </Link>
-              ))
-            ) : (
-              <div>Loading</div>
-            )}
-          </div>
-          <div className="flex justify-center mt-10">
+                  <h3 className="max-w-[120px] sm:max-w-[150px] md:max-w-[184px] inline-block text-ellipsis overflow-hidden whitespace-nowrap text-[#dbdbdb]">
+                    {item.name}
+                  </h3>
+                  <h4 className="max-w-[120px] sm:max-w-[150px] md:max-w-[184px] text-ellipsis overflow-hidden whitespace-nowrap text-[#7a7a7a] text-xs">
+                    {item.origin_name}
+                  </h4>
+                </div>
+              </Link>
+            ))
+          ) : (
+            <div>Loading</div>
+          )}
+        </div>
+        <div className="flex justify-center mt-10">
             <button
               onClick={handlePreviousPage}
               className="bg-[#ff8a00] text-white px-4 py-2 m-2 rounded-lg"
@@ -208,8 +209,8 @@ const Category = () => {
               Next
             </button>
           </div>
-        </div>
       </div>
+    </div>
       <Footer />
     </>
   );
