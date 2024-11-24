@@ -21,7 +21,7 @@ const Phimbo = () => {
         } else {
           setError("No items found in response");
         }
-        console.log(response);
+        // console.log(response);
       } catch (error) {
         if (isMounted) {
           setError(error.message);
@@ -41,7 +41,8 @@ const Phimbo = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="h-screen bg-gray-900 text-white flex items-center justify-center">Loading...</div>;
+
   }
 
   return (
@@ -60,7 +61,7 @@ const Phimbo = () => {
             </button>
           </Link>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 md:gap-4">
+        <div className="grid gap-1 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 md:gap-4">
           {data.length > 0 ? (
             data.map((item) => (
               <Link to={`/detail/${item.slug}`} key={item.id} className="mx-auto">
@@ -70,7 +71,7 @@ const Phimbo = () => {
                       effect="blur"
                       src={`https://phimimg.com/${item.poster_url}`}
                       alt="poster"
-                      className="w-full h-80 sm:h-64 md:min-w-[184px] md:h-72 object-cover rounded hover:shadow-lg transition duration-300"
+                      className="w-full h-80 sm:h-64 md:min-w-[184px] md:h-72 object-cover sm:rounded hover:shadow-lg transition duration-300"
                     />
                   </div>
                   <h3 className="max-w-[120px] sm:max-w-[150px] md:max-w-[184px] inline-block text-ellipsis overflow-hidden whitespace-nowrap text-[#dbdbdb]">

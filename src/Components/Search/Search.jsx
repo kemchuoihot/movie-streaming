@@ -25,7 +25,7 @@ const Search = () => {
         } else {
           setError("No items found in response");
         }
-        console.log(response);
+        // console.log(response);
       } catch (error) {
         setError(error.message);
         console.error(error.message);
@@ -140,7 +140,7 @@ const Search = () => {
               <div className="w-full h-[1px] text-transparent bg-gradient-to-br from-[#ff8a00] to-[#ff2070] ml-5"></div>
             </div>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 md:gap-4 ">
+          <div className="grid gap-1 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 md:gap-4 ">
             {data.length > 0 ? (
               data.map((item) => (
                 <Link
@@ -154,7 +154,7 @@ const Search = () => {
                         effect="blur"
                         src={`https://phimimg.com/${item.poster_url}`}
                         alt="poster"
-                        className="w-full h-80 sm:h-64 md:min-w-[184px] md:h-72 object-cover rounded hover:shadow-lg transition duration-300 "
+                        className="w-full h-80 sm:h-64 md:min-w-[184px] md:h-72 object-cover sm:rounded hover:shadow-lg transition duration-300 "
                       />
                     </div>
                     <h3 className="max-w-[120px] sm:max-w-[150px] md:max-w-[184px] inline-block text-ellipsis overflow-hidden whitespace-nowrap text-[#dbdbdb]">
@@ -167,12 +167,12 @@ const Search = () => {
                 </Link>
               ))
             ) : (
-              <div className="flex flex-col items-center justify-center h-full py-20">
-                <img
+              <div className="flex flex-col items-center justify-center h-full py-20 ml-3 sm:ml-0 col-span-4">
+                {/* <img
                   src="https://via.placeholder.com/150"
                   alt="No results"
                   className="mb-8"
-                />
+                /> */}
                 <h2 className="text-2xl font-bold text-white mb-4">
                   No Results Found
                 </h2>

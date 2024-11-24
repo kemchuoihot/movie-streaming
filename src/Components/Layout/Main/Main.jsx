@@ -32,7 +32,7 @@ const Main = () => {
         } else {
           setError("No items found in response");
         }
-        console.log(response);
+        // console.log(response);
       } catch (error) {
         if (isMounted) {
           setError(error.message);
@@ -55,7 +55,7 @@ const Main = () => {
       try {
         const data = await fetchMovieDetails(slug);
         setMovie(data);
-        console.log(data);
+        // console.log(data);
       } catch (error) {
         setError(error.message);
       }

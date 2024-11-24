@@ -22,7 +22,7 @@ const Watch = () => {
         //   setMovie(true);
         // }
         setCurrentEp(filmData.episodes[0].server_data[0].slug);
-        console.log(filmData);
+        // console.log(filmData);
       } catch (error) {
         console.error("Failed to fetch film:", error);
       }

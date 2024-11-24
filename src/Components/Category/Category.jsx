@@ -30,7 +30,7 @@ const Category = () => {
         } else {
           setError("No items found in response");
         }
-        console.log(response);
+        // console.log(response);
       } catch (error) {
         console.error("Failed to fetch film:", error);
       } finally {
@@ -167,7 +167,7 @@ const Category = () => {
           </div>
           
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 md:gap-4 ">
+        <div className="grid gap-1 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 md:gap-4 ">
           {data.length > 0 ? (
             data.map((item) => (
               <Link to={`/detail/${item.slug}`} key={item.id} className="mx-auto">

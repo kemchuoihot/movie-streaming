@@ -18,7 +18,7 @@ const Detail = () => {
         const filmData = await fetchMovieDetails(slug);
         setFilm(filmData);
         setTrailerId(filmData.movie.trailer_url.split("?v=")[1]);
-        console.log(filmData);
+        // console.log(filmData);
       } catch (error) {
         console.error("Failed to fetch film:", error);
       }

@@ -42,7 +42,7 @@ const NavBar = () => {
             <form
               action={`/search/`}
               method="get"
-              className="w-4/5 md:w-full text-sm bg-gray-300 rounded-full gap-4 md:ld-0 ml-5"
+              className="w-4/5 md:w-full text-sm bg-gray-300 rounded-full gap-4 md:ml-0 ml-5"
             >
               <button
                 type="submit"
@@ -54,7 +54,7 @@ const NavBar = () => {
                 type="text"
                 name="keyword"
                 placeholder="Tìm phim ở đây ..."
-                className="font-medium placeholder:text-gray-600 text-sm w-10/12 bg-transparent border-none px-2 text-black"
+                className="font-medium placeholder:text-gray-600 text-sm sm:w-10/12 bg-transparent border-none px-2 text-black"
               />
             </form>
           </div>

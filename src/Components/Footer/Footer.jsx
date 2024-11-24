@@ -1,21 +1,22 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer class="bg-white dark:bg-gray-900">
       <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
           <div class="mb-6 md:mb-0">
-            <a href="https://flowbite.com/" class="flex items-center">
+            <Link to="https://movie-streaming-azure.vercel.app/" class="flex items-center">
               <img
-                src="https://flowbite.com/docs/images/logo.svg"
+                src="https://png.pngtree.com/png-clipart/20230812/original/pngtree-college-city-architecture-logo-vector-picture-image_10498122.png"
                 class="h-8 me-3"
                 alt="FlowBite Logo"
               />
+              
               <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                Flowbite
+                City Movie
               </span>
-            </a>
+            </Link>
           </div>
           <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
@@ -24,14 +25,14 @@ const Footer = () => {
               </h2>
               <ul class="text-gray-500 dark:text-gray-400 font-medium">
                 <li class="mb-4">
-                  <a href="https://flowbite.com/" class="hover:underline">
-                    Flowbite
-                  </a>
+                  <Link to="https://kkphim.vip/" class="hover:underline">
+                    API: KKPhim
+                  </Link>
                 </li>
                 <li>
-                  <a href="https://tailwindcss.com/" class="hover:underline">
-                    Tailwind CSS
-                  </a>
+                  <Link to="https://tailwindcss.com/" class="hover:underline">
+                    FE: Tailwind CSS
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -41,20 +42,20 @@ const Footer = () => {
               </h2>
               <ul class="text-gray-500 dark:text-gray-400 font-medium">
                 <li class="mb-4">
-                  <a
-                    href="https://github.com/themesberg/flowbite"
+                  <Link
+                    to="https://github.com/kemchuoihot"
                     class="hover:underline "
                   >
                     Github
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="https://discord.gg/4eeurUVvTy"
+                  <Link
+                    to="https://kindy-portfolio.vercel.app/"
                     class="hover:underline"
                   >
-                    Discord
-                  </a>
+                    Portfolio
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -64,14 +65,14 @@ const Footer = () => {
               </h2>
               <ul class="text-gray-500 dark:text-gray-400 font-medium">
                 <li class="mb-4">
-                  <a href="#" class="hover:underline">
+                  <Link to="" class="hover:underline">
                     Privacy Policy
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" class="hover:underline">
+                  <Link to="#" class="hover:underline">
                     Terms &amp; Conditions
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -80,15 +81,18 @@ const Footer = () => {
         <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div class="sm:flex sm:items-center sm:justify-between">
           <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-            © 2023{" "}
-            <a href="https://flowbite.com/" class="hover:underline">
-              Flowbite™
-            </a>
+            © 2024{" "}
+            <Link
+              to="https://kindy-portfolio.vercel.app/"
+              class="hover:underline"
+            >
+              Kindy
+            </Link>
             . All Rights Reserved.
           </span>
           <div class="flex mt-4 sm:justify-center sm:mt-0">
-            <a
-              href="#"
+            <Link
+              to="#"
               class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
@@ -105,43 +109,54 @@ const Footer = () => {
                 />
               </svg>
               <span class="sr-only">Facebook page</span>
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="https://www.linkedin.com/in/thinh-nguyen-21ba67284/"
               class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
             >
               <svg
-                class="w-4 h-4"
+                class="w-5 h-5 "
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
                 fill="currentColor"
-                viewBox="0 0 21 16"
-              >
-                <path d="M16.942 1.556a16.3 16.3 0 0 0-4.126-1.3 12.04 12.04 0 0 0-.529 1.1 15.175 15.175 0 0 0-4.573 0 11.585 11.585 0 0 0-.535-1.1 16.274 16.274 0 0 0-4.129 1.3A17.392 17.392 0 0 0 .182 13.218a15.785 15.785 0 0 0 4.963 2.521c.41-.564.773-1.16 1.084-1.785a10.63 10.63 0 0 1-1.706-.83c.143-.106.283-.217.418-.33a11.664 11.664 0 0 0 10.118 0c.137.113.277.224.418.33-.544.328-1.116.606-1.71.832a12.52 12.52 0 0 0 1.084 1.785 16.46 16.46 0 0 0 5.064-2.595 17.286 17.286 0 0 0-2.973-11.59ZM6.678 10.813a1.941 1.941 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.919 1.919 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Zm6.644 0a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.918 1.918 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Z" />
-              </svg>
-              <span class="sr-only">Discord community</span>
-            </a>
-            <a
-              href="#"
-              class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
-            >
-              <svg
-                class="w-4 h-4"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 20 17"
+                viewBox="0 0 24 24"
               >
                 <path
                   fill-rule="evenodd"
-                  d="M20 1.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 1-2.605.98A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 14.184 11.732 11.732 0 0 0 6.291 16 11.502 11.502 0 0 0 17.964 4.5c0-.177 0-.35-.012-.523A8.143 8.143 0 0 0 20 1.892Z"
+                  d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-.988 1.483 1.595 1.595 0 0 1-1.743-.348A1.607 1.607 0 0 1 5.6 4.5a1.601 1.601 0 0 1 1.6 1.606Z"
+                  clip-rule="evenodd"
+                />
+                <path d="M7.2 8.809H4V19.5h3.2V8.809Z" />
+              </svg>
+
+              <span class="sr-only">Linked</span>
+            </Link>
+            <Link
+              to="https://kindy-portfolio.vercel.app/"
+              class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+            >
+              <svg
+                class="w-5 h-5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4 4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4Zm10 5a1 1 0 0 1 1-1h3a1 1 0 1 1 0 2h-3a1 1 0 0 1-1-1Zm0 3a1 1 0 0 1 1-1h3a1 1 0 1 1 0 2h-3a1 1 0 0 1-1-1Zm0 3a1 1 0 0 1 1-1h3a1 1 0 1 1 0 2h-3a1 1 0 0 1-1-1Zm-8-5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm1.942 4a3 3 0 0 0-2.847 2.051l-.044.133-.004.012c-.042.126-.055.167-.042.195.006.013.02.023.038.039.032.025.08.064.146.155A1 1 0 0 0 6 17h6a1 1 0 0 0 .811-.415.713.713 0 0 1 .146-.155c.019-.016.031-.026.038-.04.014-.027 0-.068-.042-.194l-.004-.012-.044-.133A3 3 0 0 0 10.059 14H7.942Z"
                   clip-rule="evenodd"
                 />
               </svg>
+
               <span class="sr-only">Twitter page</span>
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="https://github.com/kemchuoihot"
               class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
             >
               <svg
@@ -158,9 +173,9 @@ const Footer = () => {
                 />
               </svg>
               <span class="sr-only">GitHub account</span>
-            </a>
-            <a
-              href="#"
+            </Link>
+            {/* <Link
+              to="#"
               class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
             >
               <svg
@@ -177,7 +192,7 @@ const Footer = () => {
                 />
               </svg>
               <span class="sr-only">Dribbble account</span>
-            </a>
+            </Link> */}
           </div>
         </div>
       </div>
