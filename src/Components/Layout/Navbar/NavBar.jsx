@@ -4,10 +4,23 @@ import "boxicons/css/boxicons.min.css";
 
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [scrollDirection, setScrollDirection] = useState("up");
 
   useEffect(() => {
+    let lastScrollY = window.pageYOffset;
+
     const handleScroll = () => {
-      if (window.scrollY > 100) {
+      const currentScrollY = window.pageYOffset;
+
+      if (currentScrollY > lastScrollY) {
+        setScrollDirection("down");
+      } else {
+        setScrollDirection("up");
+      }
+
+      lastScrollY = currentScrollY;
+
+      if (currentScrollY > 50) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -23,40 +36,40 @@ const NavBar = () => {
 
   return (
     <>
-      <div
-        className={`fixed w-full top-0 z-20 transition-all duration-700 ${
-          scrolled ? "bg-gray-900 bg-opacity-90" : "bg-transparent"
-        }`}
-      >
-        <div className="container mx-auto py-6 px-2 lg:grid gap-10 grid-cols-10 justify-between items-center">
-          <div className="col-span-2 lg:block hidden">
-            <Link to="/">
-              <img
-                src="https://seeklogo.com/images/M/movie-city-hd-logo-D25A7AC34A-seeklogo.com.png"
-                alt="logo"
-                className="w-full h-10 object-contain rounded-full"
-              />
-            </Link>
-          </div>
-          <div className="col-span-4">
-            <form
-              action={`/search/`}
-              method="get"
-              className="w-4/5 md:w-full text-sm bg-gray-300 rounded-full gap-4 md:ml-0 ml-5"
+       <div
+      className={`fixed w-full top-0 z-20 transition-all duration-700 ${
+        scrolled ? "sm:bg-gray-900 bg-opacity-90" : "bg-transparent"
+      } ${scrollDirection === "down" ? "-translate-y-full" : "translate-y-0"}`}
+    >
+      <div className="container max-w-screen-xl mx-auto py-3 px-1 sm:py-6 sm:px-2 lg:grid gap-10 grid-cols-10 justify-between items-center">
+        <div className="col-span-2 lg:block hidden">
+          <Link to="/">
+            <img
+              src="https://seeklogo.com/images/M/movie-city-hd-logo-D25A7AC34A-seeklogo.com.png"
+              alt="logo"
+              className="w-full h-10 object-contain rounded-full"
+            />
+          </Link>
+        </div>
+        <div className="col-span-4">
+          <form
+            action={`/search/`}
+            method="get"
+            className="sm:w-5/6 mx-auto w-4/5 md:w-full text-sm bg-gray-300 rounded-full gap-4 md:ml-0"
+          >
+            <button
+              type="submit"
+              className="bg-blue-500 w-12 justify-start h-12 rounded-full text-white"
             >
-              <button
-                type="submit"
-                className="bg-blue-500 w-12 justify-start h-12 rounded-full text-white"
-              >
-                <i className="bx bx-search-alt"></i>
-              </button>
-              <input
-                type="text"
-                name="keyword"
-                placeholder="Tìm phim ở đây ..."
-                className="font-medium placeholder:text-gray-600 text-sm sm:w-10/12 bg-transparent border-none px-2 text-black"
-              />
-            </form>
+              <i className="bx bx-search-alt"></i>
+            </button>
+            <input
+              type="text"
+              name="keyword"
+              placeholder="Tìm phim ở đây ..."
+              className="font-medium placeholder:text-gray-600 text-sm w-10/12 bg-transparent border-none px-2 text-black"
+            />
+          </form>
           </div>
           <div className="col-span-4 font-medium text-sm gap-36 xl:gap-14 2xl:gap-20 justify-between lg:flex xl:justify-end items-center hidden">
             <ul className="flex lg:gap-10 gap-4">

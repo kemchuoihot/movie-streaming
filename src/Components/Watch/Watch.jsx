@@ -60,7 +60,7 @@ const Watch = () => {
             : "bg-transparent"
         }`}
       >
-        <div className="container mx-auto py-4 px-4 flex justify-between items-center">
+        <div className="container max-w-screen-xl mx-auto py-4 px-4 flex justify-between items-center">
           <div className="flex items-center">
             <ul className="flex space-x-4 pt-5">
               <li>
@@ -127,7 +127,7 @@ const Watch = () => {
         ></iframe>
       </div>
       <div className="bg-[#06121e] h-auto pb-10">
-        <div className="container mx-auto p-3">
+        <div className="container mx-auto max-w-screen-xl p-3">
           <h3 className="text-white pt-10 font-[Montserrat] font-bold text-xl">
             <i class="bx bxs-playlist text-red-500 mr-3"></i>
             Danh sách tập phim:{" "}

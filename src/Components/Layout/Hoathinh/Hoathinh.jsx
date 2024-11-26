@@ -45,8 +45,8 @@ const Hoathinh = () => {
   }
 
   return (
-    <div className="bg-[#06121e] h-auto sm:p-10 relative">
-      <div className="relative bg-[#0e274073] sm:rounded-lg sm:px-5 sm:container mx-auto w-full">
+    <div className="bg-[#06121e] h-auto sm:p-10 relative ">
+      <div className="relative bg-[#0e274073] sm:rounded-lg sm:px-5 sm:container  mx-auto w-full">
         <div className="flex justify-between pt-5 pb-4">
           <div className="inline-block">
             <h1 className="text-lg md:text-2xl font-bold font-[Montserrat] md:ml-5 relative bg-gradient-to-br from-[#ff8a00] to-[#ff2070] inline-block text-transparent bg-clip-text">

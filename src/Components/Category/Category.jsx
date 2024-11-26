@@ -105,7 +105,7 @@ const Category = () => {
           scrolled ? "bg-gray-900 bg-opacity-90" : "bg-transparent"
         }`}
       >
-        <div className="container mx-auto py-4 px-4 flex justify-between items-center">
+        <div className="container max-w-screen-xl mx-auto py-4 px-4 flex justify-between items-center">
           <div className="flex items-center">
             <ul className="flex space-x-4 pt-5">
               <li>
@@ -157,7 +157,7 @@ const Category = () => {
         </div>
       </header>
       <div className="bg-[#06121e] h-auto py-20 relative ">
-      <div className="relative bg-[#0e274073] sm:rounded-lg sm:px-5 sm:container mx-auto w-full">
+      <div className="relative bg-[#0e274073] sm:rounded-lg sm:px-5 container max-w-screen-xl mx-auto w-full">
         <div className="flex justify-between pt-5 pb-4">
           <div className="inline-block">
             <h1 className="text-lg md:text-2xl font-bold font-[Montserrat] md:ml-5 relative bg-gradient-to-br from-[#ff8a00] to-[#ff2070] inline-block text-transparent bg-clip-text">

@@ -56,7 +56,7 @@ const Detail = () => {
             : "bg-transparent"
         }`}
       >
-        <div className="container mx-auto py-4 px-4 flex justify-between items-center">
+        <div className="container max-w-screen-xl mx-auto py-4 px-4 flex justify-between items-center">
           <div className="flex items-center">
             <ul className="flex space-x-4 pt-5">
               <li>
@@ -114,7 +114,7 @@ const Detail = () => {
         <div className="absolute inset-0 bg-black bg-opacity-60"></div>
       </div>
       <section className="bg-[#06121e] px-4 ">
-        <div className="container mx-auto flex flex-col lg:flex-row ">
+        <div className="container max-w-screen-xl mx-auto flex flex-col lg:flex-row ">
           <div className="w-full lg:w-1/3 mb-8 lg:mb-0 relative -top-80">
             <LazyLoadImage
               effect="blur"
@@ -198,7 +198,7 @@ const Detail = () => {
                 <span className="text-xl text-white">Trailer:</span>
                 <iframe
                   title="Movie Trailer"
-                  className="w-4/5 h-[420px] mt-4"
+                  className="w-full h-56 sm:w-4/5 sm:h-[420px] mt-4"
                   src={`https://youtube.com/embed/${trailerId}`}
                   allowFullScreen
                 ></iframe>
