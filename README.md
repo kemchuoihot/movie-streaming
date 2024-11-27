@@ -2,6 +2,14 @@
 
 This is a movie streaming application built with React, Tailwind CSS, and various other libraries. The application allows users to browse and search for movies, view movie details, watch trailers and watch movies.
 
+## Technologies Used
+
+- React
+- Tailwind CSS
+- React Router
+- Lazy Load Image Component
+- React Loading Skeleton
+
 ## Installation
 
 1. Clone the repository:
