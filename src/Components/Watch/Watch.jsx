@@ -113,7 +113,7 @@ const Watch = () => {
       </header>
 
       <div
-        className="lg:h-screen h-96 relative bg-cover"
+        className="lg:h-screen bg-center h-96 relative bg-cover"
         style={{ backgroundImage: `url(${film.movie.thumb_url})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#06121e] bg-black bg-opacity-40"></div>

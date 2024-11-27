@@ -166,7 +166,7 @@ const Main = () => {
                         />
                         <div className=" sm:hidden block">
                           <h1 className="text-2xl font-bold font-[Montserrat] italic bg-gradient-to-br from-[#fecf59] to-[#fff1cc] inline-block text-transparent bg-clip-text">{index+1}</h1>
-                          <h1 className="max-w-52 text-xl font-[Montserrat] italic text-ellipsis overflow-hidden whitespace-nowrap font-bold inline-block">{item.name}</h1>
+                          <h1 className="max-w-40 text-xl font-[Montserrat] italic text-ellipsis overflow-hidden whitespace-nowrap font-bold inline-block text-white relative ml-1 top-2">{item.name}</h1>
                           {/* <p className="text-gray-500">{item.description}</p> */}
                         </div>
                       </div>
