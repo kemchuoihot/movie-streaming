@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Movie Streaming Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a movie streaming application built with React, Tailwind CSS, and various other libraries. The application allows users to browse and search for movies, view movie details, watch trailers and watch movies.
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/kemchuoihot/movie-streaming
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd movie-streaming
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-### `npm start`
+## Usage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Start the development server:
+   ```bash
+   npm run start
+   ```
+2. Open your browser and navigate to `http://localhost:3000`.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Structure
 
-### `npm test`
+- `src/Components/Layout/Navbar/NavBar.jsx`: Contains the navigation bar component with a search form.
+- `src/Components/Layout/Main/Main.jsx`: Contains the main content component that displays a list of movies.
+- `src/Components/Layout/Hoathinh/Hoathinh.jsx`: Contains the component for displaying Hoạt Hình movies.
+- `src/Components/Layout/Phimle/Phimle.jsx`: Contains the component for displaying Phim Lẻ movies.
+- `src/Components/Layout/Phimbo/Phimbo.jsx`: Contains the component for displaying Phim Bộ movies.
+- `src/Components/Search/Search.jsx`: Contains the search results component.
+- `src/Components/Detail/Detail.jsx`: Contains the movie detail component.
+- `src/Components/Watch/Watch.jsx`: Contains the component for watching trailers.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+- **Browse Movies**: Navigate to different categories using the navigation bar. Click on a movie to view its details.
+- **Search Movies**: Use the search form in the navigation bar to search for movies by keyword. The search results will be displayed on the search results page.
+- **View Movie Details**: Click on a movie to view its details including name, year, and description.
+- **Watch Movie**: Click on the "Watch" button to watch the the selected movie.
+- **Responsive Design**: The application is designed to be responsive and works well on various screen sizes including mobile devices.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Contributing
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Contributions are welcome! Please fork the repository and submit a pull request for any improvements or bug fixes.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## License
 
-### `npm run eject`
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Contact
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For any questions or inquiries, please contact [thinhpx33@gmail.com](mailto:thinhpx33@gmail.com).
